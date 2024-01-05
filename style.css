@@ -61,3 +61,56 @@ body {
     transition: 0.5s;
     filter: grayscale();
 }
+
+.container .icon .imagBox.active img {
+    filter: grayscale(0);
+}
+
+/* Content Text  */
+.content {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.content::before {
+    content: '';
+    position: absolute;
+    inset: 100px;
+    border: 4px solid transparent;
+    border-left: 4px solid #2196f3;
+    border-right: 4px solid #2196f3;
+    border-radius: 50%;
+    animation: animate_rotate_reverse 3s linear infinite;
+}
+
+.content::after {
+    content: '';
+    position: absolute;
+    inset: 150px;
+    border: 4px solid transparent;
+    border-top: 4px solid #ff255e;
+    border-bottom: 4px solid #ff255e;
+    border-radius: 50%;
+    animation: animate_rotate 3s linear infinite;
+}
+
+@keyframes animate_rotate {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
+
+@keyframes animate_rotate_reverse {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: -360deg;
+    }
+}
